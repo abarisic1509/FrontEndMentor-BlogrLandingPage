@@ -1,0 +1,39 @@
+
+.header {
+    @include redGradient(to bottom right);
+    max-height: 100vh;
+    border-bottom-left-radius: calc(5rem + 3vw);
+    .overlay {
+        background-image: url(../images/bg-pattern-intro-mobile.svg);
+        background-size: 300%;
+        background-position: left 30% top 35%;
+        border-bottom-left-radius: calc(5rem + 3vw);
+        @include gridMain;
+        grid-template-rows: max-content;
+        grid-template-areas: 
+            '. nav .'
+            '. hero .';
+    }
+}
+.hero {
+    grid-area: hero;
+    @include flexProperties(center,center,column);
+    text-align: center;
+    color: $white;
+    padding: calc(3em + 5vh) 2em calc(5em + 8vh);
+    h1 {
+        color: $white;
+        font-weight: 600;
+        line-height: 140%;
+        margin-bottom: 1em;
+    }
+    p {
+        font-weight: 300;
+        margin-bottom: 2em;
+    }
+    .btn-wrapper {
+        @include flexProperties(center, center, row);
+        gap: 1em;
+    }
+
+}

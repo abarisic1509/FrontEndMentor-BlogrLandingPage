@@ -1,0 +1,122 @@
+.main-nav {
+    grid-area: nav;
+    @include fluidText(1.4rem, 1.5rem);
+    font-weight: 700;
+    position: relative;
+    
+}
+.nav-wrapper {
+    @include flexProperties(space-between,center,row);
+    padding: 2em 1.5em 1em;
+}
+.toggle-btn {
+    padding: .5em;
+    &:hover,
+    &:focus {
+        border: 2px solid $darkBlackBlue;
+    }
+    &.menu-btn-close {
+        position: absolute;
+        top: -4.2em; right: .9em;
+        display: none;
+    }
+    &.menu-btn-close.show{
+        display: block;
+    }
+    &.menu-btn-open.hide {
+        display: none;
+    }
+}
+.nav-items {
+    position: absolute;
+    top: 5em; left: 1em; right: 1em;
+    background-color: $white;
+    border-radius: .5em;
+    text-align: center;
+    @include flexProperties(space-between,center,column);
+    padding: 2em 0;
+    box-shadow: 0 .5em 1em $darkBlackBlue;
+    opacity: 0;
+    visibility: hidden;
+    &.is-visible {
+        opacity: 1;
+    }
+    &.is-active {
+        visibility: visible;
+    }
+    & > ul {
+        @include flexProperties(space-between,center,column);
+        gap: 2rem;
+        @include fluidText(1.3rem, 1.4rem);
+        width: 100%;
+        padding-bottom: 2em;
+        margin-bottom: 1em;
+        &::after {
+            content: '';
+            width: calc(100% - 4rem);
+            height: .1rem;
+            background-color: $grayBlue;
+            
+        }
+    }
+}
+.dropdown-item {
+    width: 100%;
+    span {pointer-events: none;}
+    svg {
+        transition: all .3s ease-in-out;
+        path{
+            stroke: $lightRed;
+        }
+    }
+    &:hover svg,
+    &:focus svg{
+        transform: rotate(180deg);
+    }
+}
+.dropdown-btn {
+    @include fluidText(1.4rem, 1.5rem);
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+        color: $darkGrayBlue;
+    }
+    &:focus {
+        border: 1px dashed $darkGrayBlue;
+    }
+}
+.dropdown-list {
+    background-color: hsl(240, 15%, 95%);
+    color: $darkGrayBlue;
+    margin: 1em 2em;
+    padding: 1.5em 0;
+    border-radius: .5rem;
+    @include flexProperties (center, center, column);
+    gap: 1em;
+    display: none;
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+    &.open {
+        display: flex;
+    }
+}
+.main-nav .btn-wrapper {
+    @include flexProperties(space-between,center,column);
+    gap: rem;
+    a:hover,
+    a:focus {
+        color: $darkGrayBlue;
+        text-decoration: underline;
+    }
+    .btn {
+        @include redGradient(to right);
+        color: $white;
+        padding: .9em 2.3em;
+        &:hover,
+        &:focus {
+            @include redGradient(to left);
+        }
+    }
+}

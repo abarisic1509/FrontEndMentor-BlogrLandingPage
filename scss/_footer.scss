@@ -1,0 +1,32 @@
+footer {
+    background-color: $darkBlackBlue;
+    border-top-right-radius: calc(5em + 3vw);
+    text-align: center;
+    padding: 3em 2em 0;
+    color: $grayBlue;
+    @include flexProperties(space-between, center,column);
+    .nav-wrapper {
+        width: 100%;
+        @include grid(12em);
+    }
+    h4 {
+        color: $white;
+        margin-bottom: 1em;
+    }
+    ul {
+        margin-bottom: 1em;
+        li a {
+            line-height: 1.7;
+            &:hover, 
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.attribution {
+    background-color: $darkGrayBlueGradient;
+    text-align: center;
+    color: $white;
+    padding: 1em 0;
+}
