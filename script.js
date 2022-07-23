@@ -43,7 +43,7 @@ const initMainNav = () => {
     });
 
 
-    document.addEventListener('click', handleClosure);
+    //document.addEventListener('click', handleClosure);
     document.addEventListener('focusin', handleClosure);
 
     navigationItems.forEach(link => link.addEventListener('click', () => close()));
